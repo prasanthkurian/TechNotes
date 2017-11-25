@@ -1,0 +1,282 @@
+Collection Datatypes
+---------------------
+
+1. Sequence Types
+2. Set Types
+3. Mapping Types
+4. Iterating and Copying Collections
+
+list => []
+dict() =>{}
+tuple() =>()
+set() =>{}
+map() =>
+
+Five builtin Sequence Types
+---------------------------
+1. bytearray
+2. bytes
+3. list
+4. str
+5. tuple
+
+Sequence Types provided standard Library
+----------------------------------------
+collections.namedtuple
+
+Tuples
+--------
+
+Tuple supports all comparison operators
+----------------------------------------
+<, <= , == , != , >= , >
++ => concatenation
+* => replication
+
+in , not in
+
+
+count => counts no times an items appear in a tuple
+index => first index of the item appears in the tuple
+
+
+del tuple_name => explicitely delete an instance
+
+
+Named Tuples
+------------
+
+Can refer tuple items by name as well as index position
+
+
+collections.namedtuple()
+-------------------------
+
+Implementation is as below
+
+from collections import namedtuple
+
+mobile = namedtuple("mobile", "product_name, price, quantity")
+mobiles = []
+mobiles.append(mobile("apple", 70000, 10))
+mobiles.append(mobile("moto", 20000, 12))
+mobiles.append(mobile("lenovo", 10000, 14))
+
+
+Lists
+-------
+comparison operators works in <, <=, ==, !=, >=, >
++, 
+* => Replication operators [1,2,3,4] * 5
+ etc work for List
+
+ in 
+
+List Methods
+------------
+L.append()
+L.count(x)
+L.extend(m) => m is list  L += m does same thing
+L.index()
+L.insert(i,x)
+L.pop()
+L.pop(index)
+L.reverse()
+L.sort(...)
+
+sorted() => and L.sort() => Syntax => sorted(L, key=function, reverse="True or False")
+
+How it works
+function is a function with single argument. Each argument is modifed first. Then all are sorted.
+
+Example
+=======
+-------------------------------------------------------
+Str = sorted(Str, key=len, reverse=False)
+-------------------------------------------------------
+#!/usr/bin/python
+
+def myFunc(a):
+    return a[-2::]
+
+k = ['aaa','prasanth','kurian', 'ccc', 'facebook']
+k.sort(key=myFunc)
+print(k)
+--------------------------------------------------------
+
+
+ Sequence Unpacking Operator *
+ ===========================
+ 
+ * => This Treat right hand tuple as a group
+ 
+ left, *right = 1,2,3,4
+ left => 1
+ right  => [2,3,4]
+ 
+ left, *right = [1,2,3,4]
+ left => 1
+ right  => [2,3,4]
+ 
+ first, *middle, last = "Charles Prasanth Emil Venu".split()
+ 
+ first => Charles
+ middle => [Prasanth, Emil]
+ last => Venu
+ 
+ Starred Arguments
+ ------------------
+ 
+def myFunc(a,b,c):
+	return a*b*c
+
+L=[1,2,3]	
+myFunc(*L)
+
+
+Slicing
+-------
+When new elements are added list is expanded or shrinked based on number of elements in right hand
+ 
+
+List Comprehensions
+-------------------
+
+[expression for item in iterable]
+[expression for item in iterable if condition]
+
+[a+str(b)+c for a in "A" for b in [1,2,3] for c in ['c','d','f']]
+This is right propogated
+example
+
+[x + y for x in (1,2)  for y in (x,x+1)]
+
+other way is error
+
+
+[x + y for x in (1,2)  for y in (x,x+1) if x+ y % 2]
+
+Also for loop
+
+for x in [y in for range(1,100)]:
+	print(x)
+
+
+Sets
+-----
+Sets are unordered . So slicing
+
+supported operands
+------------------
+in 
+not in 
+len
+
+!=
+==
+< - is subset or not
+<= equal or subset
+> => superset
+>= superset or equal
+
+union 
+
+=> |  {1,2,3,4} | {3,4,5}
+|= union and update
+
+Intersection
+
+&
+&= intersection and update
+
+
+Difference
+- 
+set1 - set2 =>{a,b,c,d} - {c,d,i} => {a,b}
+
+Symmetric difference
+
+set1 ^ set2 => {a,b,c,d} ^ {c,d,i} => {a,b,i}
+
+s.add => add element to set
+s.clear => clear element in set
+s.copy => returns a shallow copy of same
+
+s.difference() => s-t
+s.difference_update() => s-=t
+s.discard(x) => Removes x from set s if x found in s
+s.remove(x) => removex for s else raises KeyError
+s.intersection(t) => s&t
+s.intersection_update() => s &= t
+s.isdisjoint(t) =>Returns True if both s and t have no common elements
+s.issubset(t) s < t
+s.isuperset(t) s > t
+s.pop() -> returns element . Raises KeyError if empty
+s.union(t) => s|t
+s.update(t) => s|=t
+s.symmetric_difference(t) => s^t
+s.symmetric_difference_update(t) => s^=t
+
+
+
+Set Comprehensions
+--------------------
+
+
+
+{expression for item in iterable}
+{expression for item in iterable if condition}
+
+
+Frozen Sets
+------------
+frozenset()
+
+
+
+Mapping Types
+----------------
+
+1. dict()
+2. collections.defaultdict()
+
+Only hashable objects can be used as keys
+
+Dictionary keys can be frozenset, int, str, tuple (immutable set)
+
+==
+!=  => are meaningful
+
+>
+<
+<=
+>=
+=> Though not meaningful, can be applied. Traversed item by item
+
+Dictionary
+----------
+
+
+d1 = dict({"id": 1948, "name": "Washer", "size": 3})
+d2 = dict(id=1948, name="Washer", size=3)
+d3 = dict([("id", 1948), ("name", "Washer"), ("size", 3)])
+d4 = dict(zip(("id", "name", "size"), (1948, "Washer", 3)))
+d5 = {"id": 1948, "name": "Washer", "size": 3}
+
+len() => give number of items
+
+in  , not in => check if key is present
+
+KeyError in case of K[<not existing Key>]
+
+
+d.clear() =>clears all elements in dictionary
+d.copy() => returns a shaloow copy of dictionary
+d.g
+
+
+
+
+
+ 
+ 

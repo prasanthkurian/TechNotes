@@ -1,0 +1,144 @@
+Regular Expressions
+-------------------
+
+Regular Expression Module
+-------------------------
+
+re.compile(r, f) => Returns compiled regex r with its flags set to f if specified
+re.escape(s)
+re.findall (r,s,f) => Returns all non overlapping matches. = returns tuples of matches
+re.finditer(r,s,f) =>  Returns a match object for each nonoverlapping match regex r in string set
+re.match(r,s,f) => Returns a match object if regex match at start of the string s.
+					-> match should start from begining.
+re.search(r,s,f) => returns a match object if r match anywhere in string search. Look for match in string s 
+re.split(r,s,m) => Returns the list of strings that result from splitting s from every occurance 
+					of r . max is m split if given
+	
+re.sub(r,x,s,m)  =>  s  is replaced by x (x can be a strig func()) . m is max split
+
+re.subn(r,x,s,m) => returns 2 tuple of the resultant string and number of substitutions that were made.
+
+
+
+match object
+-------------
+group() => Return the string matched by the RE
+start() => Return the starting position of the match
+end() => Return the ending position of the match
+span() => Return a tuple containing the (start,end) positions of the match
+
+
+
+
+
+\.^$?+*{}[]()|
+
+ Character Class
+-------------------------------
+[]
+r[ead]d
+A[0123456789]D
+A[^0123456789]D => Negates matching of all characters inside
+A[0-9]D
+except \, especial character loose its special meaning
+^ => special meaning negation if it is first character in character class else simply literal
+- => is character range unless it is a first character
+. => has no meaning inside character class. Just a literal
+
+
+Table
+--------
+. - Matches any character except new line; or any character 
+\d - Matches unicode digit Ascii digit [0-9]
+\D - Matches non Unicode digit
+\s - Matches Unicode whitespace
+\S - Matches a Unicode non white space
+\w - Matches a Unicode word character
+\W - Matches Unicode non-word character
+
+
+Quantifiers
+-----------
+{m,n}
+
+e?  e{0,1} => Greedily match 0 or one occurance of e
+e?? e{0,1}? => NonGreedily match 0 or one occurance of e
+e+ or e{1,} => Greedily match one or more occurance of e
+e+? or e{1,}? => Non Greedily match one or more occurance of e
+e* or e{0,} => Greedily match zero or more occurance of e
+e*? or e{0,}? => Non greedily match zero or more occurance of e 
+e{m} => Match exactly m occurance of e 
+e{m,} => Greedily Match exactly m or more occurance of e
+e{m,}? => Non Greedily match m or more occurance of expression e
+e{,n} => Greedily match at least n occurance of e 
+e{,n}? => Non greedily match at least n occurance of e 
+e{m,n} => Greedily match at least m and at most n occurace of e 
+e{m,n}? => Non greedily match at least m and at most n occurance of e 
+
+Grouping and Capturing
+----------------------
+|
+() => air(craft|plane)jet
+re.MULTILINE => This Flag is set to span to multi lines 
+
+
+Captures
+--------
+\1
+\2
+\3
+
+(\w+)\s+\1
+\0 =>Capture number 0 is created automatically without the need for parentheses; 
+     it holds the entire match, that is, what we show underlined
+ 
+Tags using names rather than numbers
+------------------------------------
+(?P<name>) = This captures
+(?P=name) => This backreferences
+(?P<word>\w+)\s+(?P=word) = matches duplicate words using capture called words
+
+(?P<key>\w+)=(?P<value>.+)  => captures in 'key' and 'value' 
+
+Assertions and Flags 
+----------------------
+
+\b => word boundary  => Assert that character that preceds should be a word \w and character 
+
+that follows should be non word
+(?: re)	Groups regular expressions without remembering matched text. => Stops capturing
+
+
+(?imx)	Temporarily toggles on i, m, or x options within a regular expression. If in parentheses, only that area is affected.
+(?-imx)	Temporarily toggles off i, m, or x options within a regular expression. If in parentheses, only that area is affected.
+
+(?imx: re)	Temporarily toggles on i, m, or x options within parentheses.
+(?-imx: re)	Temporarily toggles off i, m, or x options within parentheses.
+(?#...)	Comment.
+(?> re)	Matches independent pattern without backtracking.
+
+Lookahead assertions
+--------------------
+(?= re) positive look ahead regular expression . Proceeds only if 're' is matched positively
+(?! re) negetive look ahead regular expression. Proceeds only if 're' is matched negetively.
+ 
+(?<=re) Matches if the expression re matches immediately before this assertion- called positive lookbehind
+(?<!e) Matches if the expression re does not matches immediately before this assertion - called negetive lookbehind 
+
+
+
+comment
+---------
+
+(?= comment)
+
+
+Other Assertions
+----------------
+^ - Matches at the start. Also matches after each newline with re.MULTILINE flag.
+$ - Matches at the end. also matches before each neline with re.MULTILINE
+\A - matches at the start
+\b - Matches at a "word" boundary. influenced by the re.ASCII flag. inside a character class
+	This is a the escape for the backspace character. 
+\B - Matches at a non word boundary. infulenced by re.ASCII 
+\Z - Matches at the end 

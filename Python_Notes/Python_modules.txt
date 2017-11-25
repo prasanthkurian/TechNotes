@@ -1,0 +1,95 @@
+Python modules
+--------------
+1. Private variables in Modules 
+Packages and Modules
+
+Modules can be grouped together into packages
+
+import importable
+import importable1, importable2, ..., importableN
+import importable as preferred_name
+
+
+from importable import (obj1, obj2, obj3)
+from importable import * => Import everything that is not private.
+
+
+last two statements import everything directly and name conflicts can happen
+
+
+__all__  => needs more investigation
+
+
+sys.path => gives all the standard python library paths.
+PYTHONPATH => User defined libray path can be set using PYTHONPATH environment variable. This paths are checed first before standard python libraries
+
+python -c "import module_name" => to check if module already exists
+python -c  <python code as string"  => run strings as python code
+
+
+Python behavior
+---------------
+When a module is imported. It check if it is already imported. if imported already it will will not reimport it again.
+
+
+Python check for .pyo => optimized byte code
+				 .pyc => non optimized byte code
+				 .py  => source code
+				 
+
+				 
+Packages
+--------
+
+Graphics/
+	__init__.py
+	JPEG.py
+	PNG.py
+	
+__all__ =>  is the list all exportable modules. This has significance when when we import all modules in a package => from Graphics import *; 
+			This vairable should be present to do this
+
+
+This needs more investigation . Not clear why __init__.py is required and __all__ => no behavior change observed
+
+The __init__.py files are required to make Python treat the directories as containing packages; this is done to prevent directories with a common name,
+such as string, from unintentionally hiding valid modules that occur later (deeper) on the module search path. In the simplest case, __init__.py can just be an empty file,
+but it can also execute initialization code for the package or set the __all__ variable, described later.
+
+
+
+
+doc strings
+
+#!/usr/bin/python
+'''
+
+I am module doc string will be printed help(module)
+'''
+
+def myFunc():
+	'''
+		I am function help. will be printed when function help is displayed"
+	'''
+	
+	
+doctest
+-------
+
+Refer TextUtil.py
+
+doctest.testmod()	
+
+if __name__ == '__main__':
+    print ("main")
+    import doctest
+    doctest.testmod()
+'''
+Inside doc string 
+>>> is_balanced("((prasanth))", check="()")
+True
+
+
+
+	
+

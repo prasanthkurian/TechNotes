@@ -1,0 +1,23 @@
+Interview notes
+----------------
+
+Docker namespaces
+------------------
+Mount Namespaces
+Process Namespace
+Network Namespaces
+UTS - Unix time sharing namespace - hostname, dnsname
+IPC Name space
+User name space UID and GID namespace
+
+
+1. how to introduce yourself
+2. your work
+3. Rest APIS - Your work around REST APIS
+4. Your work around Docker
+5. What all things you designed around the automation frameworks
+6. Techincal details of current work - More detaiils on OO and CSA
+7. Rad builtin functions in Python
+
+
+

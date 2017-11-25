@@ -1,0 +1,17 @@
+__init__ ->> contructor
+__del__  destructor
+
+
+
+class test:
+	def __init__(self):
+		pass
+	def __del__(self):
+		pass
+
+__del__ is called during automatic garbage collection when reference count becomes zero
+and  when "del object" is called
+
+
+
+Also with statement __enter__ and __exit__ are also good to look into

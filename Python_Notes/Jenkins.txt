@@ -1,0 +1,74 @@
+To Explore
+--------------
+
+Ways to Manage slave nodes using Jenkins
+1. One is SSH
+2. Agents ?
+
+
+
+Jenkins
+---------------
+
+
+Jenkins a continous integration service
+Application monitors executions of repeated jobs
+
+- Can execute remote jobs on servers
+
+Continous integration
+
+developers integreate code into  a shared repo.
+Each check in is verified by automated build
+
+Quickly deliver the application and functionality onsite
+	- This is applicable for live systems
+	
+
+Build pipe line	
+----------------
+1. Unit testing
+2. Acceptance Test
+3. Packaging
+4. Reporting
+5. Deployment
+6. Notification
+
+These can be executed in series or parrallel.
+
+Jenkins make every environment consistent.
+
+new DevOps Movement
+
+======================================================
+Jenkins Best Practices
+-----------------------
+
+1. Build management
+2. Release management
+3. Deployment Automation
+4. Test Orchestration
+
+
+Prerequisites
+---------------
+
+jdk 
+set JAVA_HOME
+
+Installation
+--------------
+Install jenikins no-arch from jenkins site
+
+
+/var/lib/jenkins 
+/var/cache/jenkins
+
+
+Jenkins User management
+Creaton of user on master and slaves for interaction
+
+
+
+
+

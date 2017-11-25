@@ -1,0 +1,278 @@
+Python Study
+---------------
+1. Common libraries available - Core libraries
+2. Exception list available
+3. Variable scope and life
+4. Lambda and other tricky stuff.
+5. Classes objects their life and scope.
+6. Tricks wth Dict, List, Hash and Variables
+7. Shallow and deep copying 
+8. Python debugging
+7. Do lot of programming  - every day a code 7 Days enough
+8. Play with string functions and list functions (Study perl functions http://perldoc.perl.org/index-functions-by-cat.html)
+9. Play with indexing
+10. Study all string functions 
+11. Study python tricks  - must to know search same in the web
+12. List Comprehensions
+There are mutable objects and non mutable objects
+immutable objects = str and int, tuple
+mutable objects = list, dict
+
+
+isinstance(x,int) => Check if an object is of give type
+
+To create a single instance tuple you need this syntax => K =(1,) 
+
+
+Shallow Copy and Deep Copy
+-------------------------	
+
+Module copy -> This will do both shallow copy and deepcopy. 
+Shallow copy - This is applicable to objects which are refering to other objects. only objects are copied and references are kept.
+Deep copy -   Doa  deep copy of underlying objects also.
+
+Logical Operations
+-------------------
+
+Identity Operator => is
+
+a is not b, a is c => (True, False)
+
+
+Comparison Operator
+--------------------
+Comparison operators can be chained
+ a < b < c => True or False
+ 
+
+
+The Membership Operator => in
+------------------------
+
+a = (1,2,3,4,5)
+b= (3)
+
+b in a => True
+
+
+Logical Operator
+----------------
+and 
+or 
+not
+
+
+control Flow statements
+------------------------
+
+pass => When python suite should be present (Block of code)
+
+
+
+while and for loop
+------------------
+break
+continue
+optional else clause
+
+
+while boolean :
+	statement1
+else:
+	print "statement2"
+
+	
+for x in a:
+		print x
+else :
+	print "something"
+
+	
+
+Exception Handling
+--------------------
+
+
+try:
+	try_suite
+except Exception1 as Variable1:
+	exception_suite
+	
+	
+
+	
+Arithemetic Operators
+----------------------
++
+-
+/
+*
+
+// - Special operator for integer division
+	
+
+Arithemetic Operations
+-----------------------
+
+Int value is immutable . That is once assigned int value cannot be changed.
+
++ can be used for integer operation + string operation + list operation 
+
+a = "John" + "Doe"
+b = 1 + 2
+c = [1,2,3,4] + [6,5,6]
+
+
+print input is  a list
+
+
+Python Keywords
+----------------
+and 	continue	except		global		lambda		pass	while
+as		def			False		if 			None		raise	with
+assert	del			finally		import		nonlocal	return	yield
+break	elif		for			in			not			True
+class	else		from		is			or			try
+
+
+How to see builtin datatypes
+----------------------------
+
+>>dir()
+>>dir(__builtins__)	
+
+
+Note: The size of an integer is limited only by the machine’s memory
+
+
+
+decimal = 1234
+binary = 0b1011
+octal = 0o1234
+Hexadecimal = 0xDEC
+
+bin(integer) => binary
+hex(integer) => hex
+oct(integer) => oct
+int(x) => converts an object into the integer
+int(s,base) => converts string S into a integer with base
+oct(integer) =>octal
+
+
+Floating point Types
+----------------------
+
+Floating point values are immutable 
+
+
+Floating point types
+1. float
+2. complex
+3. decimal.Decimal - from library which offers better precision
+
+
+math module 
+
+
+Read Float section again
+--------------------------
+
+
+Multiline strings
+------------------
+
+"""
+	This is a multi line string
+	Any line can be written
+"""
+
+Writing long string literals spread over two or more lines
+
+t = ("This is is a good way to "
+	 " write strings in multi line"
+	 " and this is  a multiline statement")
+	 
+
+
+
+ Raw strings = r"all are considered as string literals For example \n is not escaped"
+ 
+ 
+ String comparison
+ -----------------
+ String comparison supports < <= == != > >=
+ 
+ these operators compare strings byte by byte in memory.
+ 
+ 
+ Play with String Indexes
+ -------------------------
+ 
+ string[start:last:step]
+ 
+ sub string formation easy => string[0:2]+"sub string"+string[3:]
+ 
+ 
+ s.capitalize() - First letter capitalized
+ s.center()  - returns a copy of string length with padded with char
+ s.count(t, start,end) - returns numbe rof occurances of str t in string s
+ s.encode()
+ s.startswith()
+ s.endswith(x, start, end) - Returns true if string ends with x or a string in tuple
+ s.expandTabs()
+ s.find(t,start,end)
+ s.rfind(t, start, end)
+ s.format()
+ s.index(t,start,end)
+ s.rindex(t,start,end)
+ s.isalnum()
+ s.isalpha()
+ s.isdecimal() - check if it is a unicode decimal
+ s.isdigit()
+ s.isidentifier()
+ s.islower()
+ 
+ 
+ 
+ s.isnumeric()
+ s.isprintable()
+ s.isspace()
+ s.istitle()
+ s.isupper()
+ s.istitle()
+ s.join()
+ s.ljust(width, char)
+ s.lower()
+ s.upper() 
+ s.maketrans()
+ s.partition(t) - returns type of 3 strings, before, t ,after
+ s.replace(t, u, n)
+ s.split(t,n)
+ s.splitlines(f) 
+
+ s.strip(chars)
+ s.lstrip() - strip only start
+ s.rstrip() - strip only at end
+ s.swapcase() 
+ s.title()
+ s.translate()
+ s.upper()
+ s.zfill() - padded wth leading zeros
+ 
+ 
+ 
+ Difference between s.index() and s.find() 
+ 
+ First one reaise exception ValueError if no substring found. Latter one return -1.
+ 
+ 
+ 
+ Finish 2nd Chapter at end
+ ---------------------------
+ ----------------------------
+ 
+ 
+ 
+ 
+ 
+ 

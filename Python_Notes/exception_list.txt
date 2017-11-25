@@ -1,0 +1,9 @@
+Exceptions Encountered
+
+ValueError
+IndexError
+KeyError
+FileNotFoundError
+IOException
+AssertionError
+

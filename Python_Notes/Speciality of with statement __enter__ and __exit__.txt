@@ -1,0 +1,74 @@
+with is introduced in python 2.5 .
+
+What is the the specility of with statement
+
+with open("/tmp/file.txt") as fp:
+	# __enter__ block si executed automatically upon entry
+	# do something. As we exit. fp is 
+	# __exit__ block is executed automatically upon exit
+
+
+Difference
+------------------------------------------------------------------
+fp = open("/tmp/hello.txt") 
+
+try :
+	fp.readline()
+except IOError as io:
+	print(io)
+finally:
+	fp.close()
+-------------------------------------------------------------------
+
+With with statement
+
+with open("/tmp/hello.txt")  as fp:
+
+try:
+	fp.readline()
+except:
+	print()
+
+
+class test:
+	def __init__(self):
+		print "Intialized"
+	def __del__(self):
+		print "Ended"
+
+
+
+
+---------------------------------------------------------------
+
+class MyClass:
+	def __init__(self, value):
+		pass
+	def __enter__(self):
+		return fp
+	def __exit__(self, type, value, traceback):
+		# type, value and traceback 
+		# sys.exc_info or traceback module
+
+
+Flow:
+
+with MyClass(val) as fp:
+	# do some operation
+
+
+
+1. MyClass(val) __init__ is called and object stored in temporrary location
+2. with calls __enter__  and __enter__ returns fp 
+3. __exit__ called in both cases Normal exit as well as exception handling.
+4. 'with' will  catch exceptions also and paased to __exit__. Explore how sys.exc_info handles Exception  
+
+
+
+
+
+
+
+
+
+

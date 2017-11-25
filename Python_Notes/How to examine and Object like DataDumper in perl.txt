@@ -1,0 +1,35 @@
+Basically object is a dictionary
+
+
+Yu can use multiple functions
+
+type()
+dir()
+id()
+__dict__
+getattr()
+hasattr()
+globals()
+locals()
+callable()
+
+
+and most importantly
+
+obj.__dict__ prints whole dictionary
+
+dir(obj) = prints its variables and functions
+
+
+getattr -> get the attribute of a variable in an object
+getattr(Util, 'nodelist')
+
+
+hasattr = Check if an Object has an attribute
+hasattr(Util,'nodelist') => True
+
+
+id() - Id of an object
+
+
+callable(Object) => Check if an object or class is Callable 

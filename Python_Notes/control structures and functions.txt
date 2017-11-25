@@ -1,0 +1,192 @@
+Control Structures and Fucntions
+
+1. Control structures
+2. Exceptions
+3. Custom Exceptions
+4. Argument handling
+
+
+
+if elif else
+------------
+
+No tertiary operator => ?: in python . But we can use
+
+k = 100 if sys.platform.startswith('lin') else  20
+
+enumerate - Give the indexed list
+-----------
+if you want to find out index in for loop. You can see enumerate
+
+for (index, item) in enumerate(mylist):
+	print("Item index is "+index)
+	
+
+
+Exception Handling
+------------------
+
+try:
+	suite1
+except ExceptionType as exc1:
+	exc1 suite1
+except ExceptionType as exc2:
+	exc2 suite2
+
+else:
+	else suite1	
+finally:
+	finally_suite
+	
+Exception matching
+-------------------
+Either it should match the exact Exc exception or parent class of exception
+
+IndexError for out of index in list
+KeyError for no key for dctionary
+
+
+raise
+-------
+
+
+raise Exception
+raise
+
+
+raise will raise currently active exception or "RuntimeError"
+
+
+Custom Exceptions
+------------------
+
+
+class MyCustomException(Exception): pass # Elegent create an empty class
+
+
+class MyCustomException1(Exception):
+	def __init__(self):
+		self.k = dict()
+	def __str__(self):
+		return "MyCustomException is raised"
+
+		
+		
+try:
+	raise MyCustomException1
+except MyCustomException1 as exc:
+	print(exc)
+
+	
+	
+
+
+class InvalidEntityError(Exception): pass
+class InvalidNumericEntityError(InvalidEntityError): pass
+class InvalidAlphaEntityError(InvalidEntityError): pass
+class InvalidTagContentError(Exception): pass
+
+
+
+
+
+Functions
+-----------
+
+Four types of Functions
+
+1. Global Functions
+2. Local Functions
+3. Lambda Functions
+4. Methods
+
+
+
+Default Parameters
+--------------------
+
+def function_name(a,b=123,c="abcd"): pass
+
+
+Keyword parameters and positional parameters - not a big concept.  you can use key=value as arguments instead of positional parameters to ive better clarity
+
+
+Default argumnts are created at the time for fucntion definition not at the tme of function callable
+
+example
+
+def function_name(a, b=[]):
+	b.append(1)
+	print(b)
+
+	
+function_name(1,2)
+function_name(1,3)
+function_name(1,4)
+function_name(1,5)
+
+
+Argument and Parameter Unpacking (Value unpacking in broader sense)
+---------------------------------
+*arg as function parameters
+
+(a,b,c,d) = (1,2,3,4) 
+
+def dynamic_mylist(*args):
+	for x in args:
+		print(x)
+	
+
+It is also possible to use * as a “parameter” in its own right. 
+This is used to signify that there can be no positional arguments after the *, although keyword arguments are allowed.
+
+example
+
+define no_postional_param_after_me(a,b,*,d=2):
+	print(a,b,d)
+
+no_postional_param_after_me(1,2,3) # Raises Type Error
+no_postional_param_after_me(1,2,d=123) # Success
+
+Putting * at begining restrict all postional parameters. # only keyword parameters
+
+
+**mydict => for unpacking dictionary
+
+Look into this later
+----------------------
+
+
+print function
+--------------
+
+print(a,b,c,sep=" ", end="\n", file=sys.stdout) => You can pass keyword arguments here.
+
+
+
+
+assert
+--------
+
+
+assert boolean_expression, optional_expression
+
+optional_expression => is an argument to AssertionError which is useful for providing debug messages.
+
+
+a = list()
+
+assert(all(a), "Assert Error empty list")
+
+
+
+
+
+Cover lambda  later
+-------------------------------
+	
+
+
+
+
+	

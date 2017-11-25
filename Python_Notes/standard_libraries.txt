@@ -1,0 +1,12 @@
+Standard Libraries and Functions
+1. math
+2. sys
+3. os
+4. str
+5. list
+6. dict
+7. enumerate
+8. decimal.Decimal
+9. collections
+	- collections provide a custom datatypes like deque and named_tuples
+10. copy -> Do deep copy of objects
