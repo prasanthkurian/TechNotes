@@ -1,0 +1,9 @@
+Callbacks
+
+Deferreds
+-------------
+
+Help you write asynchronus code
+Defereds do not automatically make ode asynchronous or non-blocking.
+:wq
+
