@@ -1,0 +1,15 @@
+filter
+-------
+
+Built in function
+filter ( function or None, sequence) -> list, tuple, string
+
+return  filtered sequence which has a true return value from the function.
+if None return all true values
+return the same sequence type give as input
+
+
+
+
+reduce
+--------
