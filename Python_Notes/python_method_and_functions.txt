@@ -1,0 +1,42 @@
+Function vs method
+--------------------
+
+OOP context.:
+A function is a pience of code that is called by a name. it can have arguments to operate on and can optionally return value.
+
+A method is a piece of code that is called by a name and that is associated with an object.In most repects it is identical to a function but has two key differences.
+	1. A method is implicitely passed the object on whitch it is called.
+	2. A method id able to operate on data that is contained within the class.
+
+
+
+Python adheres to above rule
+----------------------------
+
+function is a callable object in python
+
+def fun():
+	pass
+
+>>> def a(): pass
+>>> a
+<function a at 0x107063aa0>
+>>> type(a)
+ <type 'function'>
+method is a special class  in python that can bound or unbound
+
+
+class myClass:
+	def A():
+		pass
+
+
+>>> class A:
+	def a(self): pass
+>>> A.a
+<unbound method A.a>
+>>>type(A.a)
+<bound method A.a of <__main__.A instance at >
+>>>type(A().a)
+<type 'instancemethod'>
+

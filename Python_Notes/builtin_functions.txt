@@ -1,4 +1,7 @@
 Builtin Functions
 -------------------
 all => returns True if iterable is non empty False if empty
+filter 
+reduce
+map
 
